@@ -1,6 +1,5 @@
 // mod enum_test 会查找名为 `enum_test.rs` 或 `enum_test/mod.rs` 的文件，模块的两种方式
 mod enum_test;
-
 use enum_test::*;
 
 // 一个名为 `my_mod` 的模块
