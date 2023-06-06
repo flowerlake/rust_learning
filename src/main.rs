@@ -71,6 +71,17 @@ mod my_mod {
     }
 }
 
+#[cfg(target_os = "linux")]
+pub fn is_linux(){
+    println!("you are linux")
+}
+
+#[cfg(not(target_os = "linux"))]
+pub fn is_linux(){
+
+    println!("you are not linux")
+}
+
 
 fn function() {
     println!("called `function()`");
@@ -216,4 +227,12 @@ fn main() {
     color2.match_3();
 
     test_other_lib();
+
+    is_linux();
+    println!("Are you sure?");
+    if cfg!(target_os = "linux") {
+        println!("Yes. It's definitely linux!");
+    } else {
+        println!("Yes. It's definitely *not* linux!");
+    }
 }

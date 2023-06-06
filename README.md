@@ -1,6 +1,7 @@
 ## Learning Timeline
 
 ### 20230606
+- crate lib
 libs/rary 目录下是一个完整的cargo项目，编译得到library.rlib,
 rary2.rs 是一个单文件，使用`rustc .\rary2.rs --crate-type=lib`编译得到library2.rlib
 在main.rs加入一个test_other_lib函数用于测试调用第三方二进制依赖包的函数等。
@@ -8,6 +9,8 @@ rary2.rs 是一个单文件，使用`rustc .\rary2.rs --crate-type=lib`编译得
 ```shell
 rustc .\main.rs --extern rary2=library2.rlib --extern rary=library.rlib
 ```
+-cfg
+**注意**条件编译时，当前环境不满足条件编译的时候，里面的重复代码\错误代码不会被检测到
 
 ### 20230604
 - match pattern-解构、谓语句、绑定
