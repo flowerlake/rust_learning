@@ -161,6 +161,11 @@ mod match_test {
     }
 }
 
+fn test_other_lib(){
+    let res= rary::add(1, 3);
+    println!("test_other_lib res {:?}", res);
+    rary2::indirect_access();
+}
 
 fn main() {
     // 模块机制消除了相同名字的项之间的歧义。
@@ -209,4 +214,6 @@ fn main() {
 
     let color2 = match_test::Color::RGB2(Some(12), 16, 53);
     color2.match_3();
+
+    test_other_lib();
 }
